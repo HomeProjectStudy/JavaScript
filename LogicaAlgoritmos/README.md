@@ -27,3 +27,9 @@
   se todas retornarem false a expressão será FALSE;
 
 - Nessa caso (! -> Not(não)) ele é usado para converter um valor em true ou false, retorna um valor booleano;
+
+## Estruturas de repetições(OBS);
+
+- A estrutura For(Clássico) - Geralmente com interáveis( arrays ou strings);
+- Já o For In - Retorna o indice ou chave (string, array ou objetos);
+- For Of Retorna o valor em sí (iteráveis, arrays ou strings);
