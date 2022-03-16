@@ -1,5 +1,6 @@
 const title = document.querySelector(".container h1");
 const data = new Date();
+
 title.innerHTML = createdDate(data);
 
 function getDayText(diaSemana) {
@@ -60,12 +61,49 @@ function createdDate(data) {
   const day = data.getDay();
   const numberMonths = data.getMonth();
 
-  const nameDay = getDayText(data.getDay());
-  const nameMonth = getNameMes(numberMonths);
+  const nameDay = dayWeekText(data.getDay());
+  const nameMonth = getNamesMonths(numberMonths);
 
   const formatedDate =
-    `${nameDay},  ${data.getDate()} de ${nameMonth}` +
-    `de ${data.getFullYear()} `;
+    `${nameDay},  ${data.getDate()}  de ${nameMonth}` +
+    ` de ${data.getFullYear()} `;
 
   return formatedDate;
 }
+
+function getNamesMonths(numberMonths) {
+  const months = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "junho",
+    "Julho",
+    "Agosto",
+    "setembro",
+    "outubro",
+    "Novembro",
+    "dezembro",
+  ];
+  return months[numberMonths];
+}
+
+function dayWeekText(week) {
+  const weeks = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+  ];
+  return weeks[week];
+}
+/* 
+  Maneira curta de declarar datas e exibir em tela;  
+*/
+// title.innerHTML = data.toLocaleDateString("pt-BR", {
+//   dateStyle: "full",
+// });
