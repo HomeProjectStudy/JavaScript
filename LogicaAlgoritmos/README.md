@@ -33,3 +33,5 @@
 - A estrutura For(Clássico) - Geralmente com interáveis( arrays ou strings);
 - Já o For In - Retorna o indice ou chave (string, array ou objetos);
 - For Of Retorna o valor em sí (iteráveis, arrays ou strings);
+- Do While -> checa pelo menos uma vez o código para testar;
+- While -> Não faz essa secagem;
