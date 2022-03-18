@@ -49,4 +49,6 @@ function radom(num1) {
   if (num1 % 5 === 0) return "Buzz";
   return num1;
 }
-console.log(radom(3));
+for (let i = 0; i <= 100; i++) {
+  console.log(i, radom(i));
+}
