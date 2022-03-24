@@ -1,7 +1,9 @@
 const paragraph = document.querySelector(".paragrafos");
 const ps = document.querySelectorAll("p");
 
+// Pegar estilos computados no browser
 const style = getComputedStyle(document.body);
+
 const backgroundColorBody = style.backgroundColor;
 let textColor = style.color;
 
