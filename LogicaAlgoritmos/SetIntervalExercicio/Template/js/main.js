@@ -2,6 +2,7 @@ const clock = document.querySelector(".clock");
 const btnInitial = document.querySelector(".initial");
 const btnPause = document.querySelector(".pause");
 const btnZero = document.querySelector(".zero");
+
 let seconds = 0;
 let timer;
 
@@ -23,17 +24,17 @@ function runClock() {
 // Forma mais clean;
 
 document.addEventListener("click", function (event) {
-  const elemet = event.target;
-  if (elemet.classList.contains("initial")) {
+  const element = event.target;
+  if (element.classList.contains("initial")) {
     clock.classList.remove("paused");
     clearInterval(timer);
     runClock();
   }
-  if (elemet.classList.contains("pause")) {
+  if (element.classList.contains("pause")) {
     clock.classList.add("paused");
     clearInterval(timer);
   }
-  if (elemet.classList.contains("zero")) {
+  if (element.classList.contains("zero")) {
     clock.classList.remove("paused");
     clearInterval(timer);
     clock.innerHTML = "00:00:00";

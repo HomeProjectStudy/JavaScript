@@ -45,7 +45,7 @@ function getLevelResulImc(imc) {
   if (imc < 18.5) return nivel[0];
 }
 function createParagraph() {
-  const paragraph = document.createElement("p");
+  const paragraph = document.createelement("p");
   return paragraph;
 }
 function setResult(message, isValid) {

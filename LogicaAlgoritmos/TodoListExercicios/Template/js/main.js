@@ -4,14 +4,14 @@ const buttonAddNewTasks = document.querySelector(".add-new-task");
 const ulListTask = document.querySelector(".tasks");
 
 // Criando LI(LISTA);
-function createElementDomLi() {
-  const li = document.createElement("li");
+function createelementDomLi() {
+  const li = document.createelement("li");
   return li;
 }
 
 //Criando nova tafera
 function newTask(inputText) {
-  const li = createElementDomLi();
+  const li = createelementDomLi();
   li.innerText = inputText;
   ulListTask.appendChild(li);
   createButtonRemove(li);
@@ -45,7 +45,7 @@ getTasksSalve();
 
 function createButtonRemove(li) {
   li.innerText += " ";
-  const buttonRemove = document.createElement("button");
+  const buttonRemove = document.createelement("button");
   buttonRemove.innerText = "Apagar";
   buttonRemove.setAttribute("class", "remove");
   li.appendChild(buttonRemove);
@@ -55,7 +55,7 @@ document.addEventListener("click", function (event) {
   const element = event.target;
 
   if (element.classList.contains("remove")) {
-    element.parentElement.remove();
+    element.parentelement.remove();
     salvingTasks();
   }
 });
