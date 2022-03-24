@@ -13,12 +13,13 @@ function formatedHoursInSeconds(seconds) {
     hour12: false,
     timeZone: "UTC",
   });
+  // 00:00:00
 }
 
 function runClock() {
   timer = setInterval(function () {
     seconds++;
-    clock.innerHTML = formatedHoursInSeconds(seconds);
+    clock.innerHTML = formatedHoursInSeconds(seconds); // -> 00:00:00
   }, 1000);
 }
 // Forma mais clean;
@@ -31,14 +32,14 @@ document.addEventListener("click", function (event) {
     runClock();
   }
   if (element.classList.contains("pause")) {
-    clock.classList.add("paused");
+    clock.classList.add("paused"); // Vem DO CSS
     clearInterval(timer);
   }
   if (element.classList.contains("zero")) {
-    clock.classList.remove("paused");
+    clock.classList.remove("paused"); // VEM DO CSS
     clearInterval(timer);
-    clock.innerHTML = "00:00:00";
-    seconds = 0;
+    clock.innerHTML = "00:00:00"; // Estado de origem
+    seconds = 0; // Estado inicial da váriavel
   }
 });
 
