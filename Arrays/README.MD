@@ -7,6 +7,7 @@ ou substituindo elementos existentes e/ou adicionando novos elementos no local;
 
 exemplo: `
 let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
+indice(2), delete(0), add('drum')
 let removed = myFish.splice(2, 0, 'drum')
 
 // myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]
