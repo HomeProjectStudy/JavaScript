@@ -2,6 +2,7 @@ const clock = document.querySelector(".clock");
 const btnInitial = document.querySelector(".initial");
 const btnPause = document.querySelector(".pause");
 const btnZero = document.querySelector(".zero");
+
 let seconds = 0;
 let timer;
 
@@ -12,32 +13,33 @@ function formatedHoursInSeconds(seconds) {
     hour12: false,
     timeZone: "UTC",
   });
+  // 00:00:00
 }
 
 function runClock() {
   timer = setInterval(function () {
     seconds++;
-    clock.innerHTML = formatedHoursInSeconds(seconds);
+    clock.innerHTML = formatedHoursInSeconds(seconds); // -> 00:00:00
   }, 1000);
 }
 // Forma mais clean;
 
 document.addEventListener("click", function (event) {
-  const elemet = event.target;
-  if (elemet.classList.contains("initial")) {
+  const element = event.target;
+  if (element.classList.contains("initial")) {
     clock.classList.remove("paused");
     clearInterval(timer);
     runClock();
   }
-  if (elemet.classList.contains("pause")) {
-    clock.classList.add("paused");
+  if (element.classList.contains("pause")) {
+    clock.classList.add("paused"); // Vem DO CSS
     clearInterval(timer);
   }
-  if (elemet.classList.contains("zero")) {
-    clock.classList.remove("paused");
+  if (element.classList.contains("zero")) {
+    clock.classList.remove("paused"); // VEM DO CSS
     clearInterval(timer);
-    clock.innerHTML = "00:00:00";
-    seconds = 0;
+    clock.innerHTML = "00:00:00"; // Estado de origem
+    seconds = 0; // Estado inicial da váriavel
   }
 });
 

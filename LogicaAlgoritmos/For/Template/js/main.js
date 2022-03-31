@@ -6,11 +6,11 @@ const elements = [
 ];
 const container = document.querySelector(".container");
 
-const div = document.createElement("div");
+const div = document.createelement("div");
 
 for (let i = 0; i < elements.length; i++) {
   const { tag, text } = elements[i];
-  let createTag = document.createElement(tag);
+  let createTag = document.createelement(tag);
   createTag.innerText = text;
   div.appendChild(createTag);
 }

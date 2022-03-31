@@ -15,7 +15,7 @@ function newTask(inputText) {
   li.innerText = inputText;
   ulListTask.appendChild(li);
   createButtonRemove(li);
-  salvingTasks();
+  salvingTasksInLocalStorage();
 }
 
 function salvingTasksInLocalStorage() {
@@ -28,13 +28,13 @@ function salvingTasksInLocalStorage() {
     tasks.push(taskText);
   }
 
-  const taskJSON = JSON.stringify(tasks);
+  const taskJSON = JSON.stringify(tasks); // -> converte para string;
   localStorage.setItem("task", taskJSON);
 }
 
 function getTasksSalve() {
   const tasks = localStorage.getItem("task");
-  const taskParsed = JSON.parse(tasks);
+  const taskParsed = JSON.parse(tasks); // -> converte de string para objeto(array)
 
   for (let task of taskParsed) {
     newTask(task);
@@ -56,12 +56,12 @@ document.addEventListener("click", function (event) {
 
   if (element.classList.contains("remove")) {
     element.parentElement.remove();
-    salvingTasks();
+    salvingTasksInLocalStorage();
   }
 });
 
 buttonAddNewTasks.addEventListener("click", function () {
-  if (!inputNewTasks.value) return;
+  if (!inputNewTasks.value) return alert("Campo Vazio, Adicione uma tarefa");
   newTask(inputNewTasks.value);
   inputNewTasks.value = "";
 });
