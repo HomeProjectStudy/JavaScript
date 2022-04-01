@@ -72,3 +72,18 @@ console.log(person1);
   fullName: [Function: fullName]
 }
 */
+
+// ## Métodos úteis para OBJETOS
+
+const product = {
+  name: "Caneca",
+  price: 42,
+};
+
+const mug = Object.assign({}, product, {
+  material: "Porcelana",
+});
+console.log(product);
+//Saída -> { name: 'Caneca', price: 42 }
+console.log(mug);
+//Saída -> { name: 'Caneca', price: 42, material: 'Porcelana' }

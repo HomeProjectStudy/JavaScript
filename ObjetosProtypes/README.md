@@ -109,3 +109,7 @@ get: function () {
       mail = value;
     },
 ```
+
+## Métodos úteis para OBJETOS
+
+-> Object.assing() -> Copia o objeto
