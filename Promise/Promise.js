@@ -45,3 +45,10 @@ Promise.race(promises) // -> Nesse caso "Primeiro valor",
   .catch((error) => {
     console.log(error);
   });
+
+async function getCep(cep) {
+  const url = fetch(`viacep.com.br/ws/${cep}/json/`);
+  const cepJson = await url;
+  console.log(cepJson);
+}
+getCep("01001000");
