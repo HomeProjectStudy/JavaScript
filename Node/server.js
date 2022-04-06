@@ -9,3 +9,8 @@ app.get("/", (request, response) => {
 app.listen(3000, () => {
   console.log("Server is running on port 3000🚀");
 });
+
+app.get("/tests", (request, response) => {
+  console.log(request.params);
+  response.send();
+});
